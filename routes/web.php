@@ -144,3 +144,11 @@ Route::get('form','FileUpController@form');
 Route::post('upload','FileUpController@fileup');
 
 
+####OriginalSqlController##########################
+Route::get('oselect','OriginalSqlController@select');
+Route::get('oselect2','OriginalSqlController@select2');
+Route::get('oinsert','OriginalSqlController@insert');
+Route::get('osdel','OriginalSqlController@del');
+Route::get('oupdate','OriginalSqlController@update');
+
+
