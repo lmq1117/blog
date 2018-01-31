@@ -42,8 +42,9 @@ class OriginalSqlController extends Controller
 
     }
 
-    //改
+    //改 返回受影响的行数
     public function update(){
-
+        $affected = DB::update('update test set name=? where id=4',['杰克']);
+        var_dump($affected);//
     }
 }
