@@ -31,9 +31,10 @@ class OriginalSqlController extends Controller
         dd($res);
     }
 
-    //增
+    //增 占位
     public function insert(){
-
+        $res = DB::insert('insert into test (id,name) values (?,?)',[6,'mary']);
+        var_dump($res);//成功 返回布尔true 失败报错
     }
 
     //删
