@@ -37,9 +37,10 @@ class OriginalSqlController extends Controller
         var_dump($res);//成功 返回布尔true 失败报错
     }
 
-    //删
-    public function del(){
-
+    //删 返回受影响的行数
+    public function delete(){
+        $deleted = DB::delete('delete from test where id = ?',[5]);
+        var_dump($deleted);
     }
 
     //改 返回受影响的行数
