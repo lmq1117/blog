@@ -67,4 +67,12 @@ class OriginalSqlController extends Controller
             DB::update('update test set money = money + ? where id = 2',[$zh]);
         });
     }
+
+
+    //手动处理事务 手册中暂时没有使用例子 跳过
+    public function transaction2 () {
+        //DB::beginTransaction();
+        //DB::rollBack();
+        //DB::commit();
+    }
 }
