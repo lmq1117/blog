@@ -48,4 +48,23 @@ class OriginalSqlController extends Controller
         $affected = DB::update('update test set name=? where id=4',['杰克']);
         var_dump($affected);//
     }
+
+    //有些数据库语句不返回任何值，对于这种类型的操作，可以使用 DB 门面的 statement 方法
+    public function statement(){
+        $res = DB::statement('drop tables users');
+        var_dump($res);//成功返回 true
+        echo 2;
+    }
+
+    //监听查询事件???
+
+    //使用事务1 如果事务闭包中抛出异常，则自动回滚，如果闭包执行成功，则事务自动提交
+    //transaction方法可以接收一个可选的第二个参数，用于定义死锁发生时事务的最大重试次数。
+    public function transaction (){
+        DB::transaction(function (){
+            $zh = 5;//转账金额
+            DB::update('update test set money = money - ? where id = 3',[$zh]);
+            DB::update('update test set money = money + ? where id = 2',[$zh]);
+        });
+    }
 }

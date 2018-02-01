@@ -145,10 +145,19 @@ Route::post('upload','FileUpController@fileup');
 
 
 ####OriginalSqlController##########################
+//原生sql执行增删改查
 Route::get('oselect','OriginalSqlController@select');
 Route::get('oselect2','OriginalSqlController@select2');
 Route::get('oinsert','OriginalSqlController@insert');
-Route::get('osdel','OriginalSqlController@del');
+Route::get('odelete','OriginalSqlController@delete');
 Route::get('oupdate','OriginalSqlController@update');
+Route::get('ostatement','OriginalSqlController@statement');
+
+//监听查询事件??
+
+//数据库事务
+Route::get('otransaction','OriginalSqlController@transaction');
+//处理死锁
+
 
 
