@@ -84,4 +84,22 @@ class QueryBuilderController extends Controller
         dd($res);
     }
 
+    public function select () {
+        $res = DB::table('test')->select('name','money as hav')->get();
+        dd($res);
+    }
+
+    public function distinct(){
+        $res = DB::table('test')->distinct()->select('money as hav')->get();
+        dd($res);
+    }
+
+    public function raw () {
+        $order_info = DB::table('user')->select(DB::raw('sum(money) as gdp,country'))
+                                        ->where('money','>=',5)
+                                        ->groupby('country')
+                                        ->get();
+        dd($order_info);
+    }
+
 }

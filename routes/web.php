@@ -180,5 +180,9 @@ Route::get('qbavg','QueryBuilderController@avg');
 Route::get('qbavg34','QueryBuilderController@avg34');
 Route::get('qbsum','QueryBuilderController@sum');
 
+//查询 select
+Route::get('qbselect','QueryBuilderController@select');
+Route::get('qbdistinct','QueryBuilderController@distinct');
+Route::get('qbraw','QueryBuilderController@raw');
 
 
