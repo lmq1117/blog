@@ -160,4 +160,18 @@ Route::get('otransaction','OriginalSqlController@transaction');
 //处理死锁
 
 
+####QueryBuilderController##########################
+//从一张表中取出所有行
+Route::get('qbget','QueryBuilderController@get');
+//从一张表中取出一行/一列
+Route::get('qbfirst','QueryBuilderController@first');
+Route::get('qbvalue','QueryBuilderController@value');
+//获取数据列值列表
+Route::get('qbpluck','QueryBuilderController@pluck');
+Route::get('qbpluckvk','QueryBuilderController@pluckvk');
+//组块结果集 chunk
+Route::get('qbchunk','QueryBuilderController@chunk');
+Route::get('qbchunkcancel','QueryBuilderController@chunkcancel');
+
+
 
