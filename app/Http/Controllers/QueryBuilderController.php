@@ -115,12 +115,16 @@ class QueryBuilderController extends Controller
 
     //左连接
     public function leftjoin () {
+        DB::connection()->enableQueryLog();
         $order_info = DB::table('order')
             ->select('order.id as order_id','user.name as user_name','goods.name as goods_name','order.gnum','order.amount')
             ->leftJoin('user','order.uid','=','user.id')
             ->leftJoin('goods','order.gid','=','goods.id')
             ->get();
-        dd($order_info);
+        $sql = DB::getQueryLog();
+        //var_dump($sql);
+        dd($sql);
+        //dd($order_info);
     }
 
 }
