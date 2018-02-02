@@ -172,6 +172,13 @@ Route::get('qbpluckvk','QueryBuilderController@pluckvk');
 //组块结果集 chunk
 Route::get('qbchunk','QueryBuilderController@chunk');
 Route::get('qbchunkcancel','QueryBuilderController@chunkcancel');
+//聚合函数
+Route::get('qbcount','QueryBuilderController@count');
+Route::get('qbmax','QueryBuilderController@max');
+Route::get('qbmin','QueryBuilderController@min');
+Route::get('qbavg','QueryBuilderController@avg');
+Route::get('qbavg34','QueryBuilderController@avg34');
+Route::get('qbsum','QueryBuilderController@sum');
 
 
 
