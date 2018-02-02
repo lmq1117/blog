@@ -184,5 +184,10 @@ Route::get('qbsum','QueryBuilderController@sum');
 Route::get('qbselect','QueryBuilderController@select');
 Route::get('qbdistinct','QueryBuilderController@distinct');
 Route::get('qbraw','QueryBuilderController@raw');
+//内连接
+Route::get('qbjoin','QueryBuilderController@join');
+Route::get('qbleftjoin','QueryBuilderController@leftjoin');
+
+
 
 

@@ -102,4 +102,25 @@ class QueryBuilderController extends Controller
         dd($order_info);
     }
 
+    //内连接
+    public function join () {
+        $order_info = DB::table('order')
+            ->select('order.id as order_id','user.name as user_name','goods.name as goods_name','order.gnum','order.amount')
+            ->join('user','order.uid','=','user.id')
+            ->join('goods','order.gid','=','goods.id')
+            ->where('order.id','>','1')
+            ->get();
+        dd($order_info);
+    }
+
+    //左连接
+    public function leftjoin () {
+        $order_info = DB::table('order')
+            ->select('order.id as order_id','user.name as user_name','goods.name as goods_name','order.gnum','order.amount')
+            ->leftJoin('user','order.uid','=','user.id')
+            ->leftJoin('goods','order.gid','=','goods.id')
+            ->get();
+        dd($order_info);
+    }
+
 }
