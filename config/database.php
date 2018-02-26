@@ -106,7 +106,7 @@ return [
 
     'redis' => [
 
-        'client' => 'predis',
+        'client' => 'phpredis',//composer包是predis 扩展安装的是phpredis
 
         'default' => [
             'host' => env('REDIS_HOST', '127.0.0.1'),

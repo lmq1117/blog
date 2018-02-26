@@ -187,6 +187,15 @@ Route::get('qbraw','QueryBuilderController@raw');
 //内连接
 Route::get('qbjoin','QueryBuilderController@join');
 Route::get('qbleftjoin','QueryBuilderController@leftjoin');
+Route::get('qbwhere','QueryBuilderController@where');
+Route::get('qbwhereor','QueryBuilderController@whereor');
+Route::get('qbwherebetween','QueryBuilderController@whereBetween');
+Route::get('qbincrement','QueryBuilderController@increment');
+
+
+
+####RedisSampleController############################
+Route::get('rt','RedisSampleController@rt');
 
 
 
